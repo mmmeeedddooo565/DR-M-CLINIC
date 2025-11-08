@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dr.mohamedesmail.clinic">
+
+    <!-- صلاحية الإنترنت للتطبيق -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:label="Dr Mohamed clinic"
+        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:name="${applicationName}">
+        android:label="Dr Mohamed clinic"
+        android:usesCleartextTraffic="true">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -12,14 +18,19 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <!-- إعداد الـ Flutter عند تشغيل التطبيق -->
         <meta-data
             android:name="flutterEmbedding"
-            android:value="2"/>
-    </application>
-</manifest>
+            android:value="2" />
 
+    </application>
+
+</manifest>
